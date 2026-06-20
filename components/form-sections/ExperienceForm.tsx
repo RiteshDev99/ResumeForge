@@ -36,43 +36,43 @@ export default function ExperienceForm({
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="flex flex-col gap-1.5">
-              <label className="text-xs font-semibold text-zinc-500 uppercase">Company Name</label>
+              <label className="text-xs font-bold text-zinc-500 dark:text-zinc-400 uppercase">Company Name</label>
               <input
                 type="text"
                 placeholder="Google"
                 value={exp.company}
                 onChange={(e) => onItemChange(exp.id, 'company', e.target.value)}
-                className="rounded-xl border border-zinc-200 bg-transparent px-4 py-2.5 text-sm text-zinc-900 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 dark:border-zinc-800 dark:text-white"
+                className="rounded-xl border border-zinc-200 bg-zinc-50/50 dark:bg-zinc-900/20 px-4 py-2.5 text-sm text-zinc-900 placeholder-zinc-400 dark:placeholder-zinc-500 outline-none focus:bg-white dark:focus:bg-zinc-900/50 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/10 dark:border-zinc-800 dark:text-white dark:focus:border-indigo-400 dark:focus:ring-indigo-400/10 transition-all duration-200 shadow-sm"
               />
             </div>
             <div className="flex flex-col gap-1.5">
-              <label className="text-xs font-semibold text-zinc-500 uppercase">Role / Title</label>
+              <label className="text-xs font-bold text-zinc-500 dark:text-zinc-400 uppercase">Role / Title</label>
               <input
                 type="text"
                 placeholder="Software Engineer"
                 value={exp.role}
                 onChange={(e) => onItemChange(exp.id, 'role', e.target.value)}
-                className="rounded-xl border border-zinc-200 bg-transparent px-4 py-2.5 text-sm text-zinc-900 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 dark:border-zinc-800 dark:text-white"
+                className="rounded-xl border border-zinc-200 bg-zinc-50/50 dark:bg-zinc-900/20 px-4 py-2.5 text-sm text-zinc-900 placeholder-zinc-400 dark:placeholder-zinc-500 outline-none focus:bg-white dark:focus:bg-zinc-900/50 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/10 dark:border-zinc-800 dark:text-white dark:focus:border-indigo-400 dark:focus:ring-indigo-400/10 transition-all duration-200 shadow-sm"
               />
             </div>
             <div className="flex flex-col gap-1.5 sm:col-span-2">
-              <label className="text-xs font-semibold text-zinc-500 uppercase">Duration (e.g. 2021 - Present)</label>
+              <label className="text-xs font-bold text-zinc-500 dark:text-zinc-400 uppercase">Duration (e.g. 2021 - Present)</label>
               <input
                 type="text"
                 placeholder="May 2021 - Present"
                 value={exp.duration}
                 onChange={(e) => onItemChange(exp.id, 'duration', e.target.value)}
-                className="rounded-xl border border-zinc-200 bg-transparent px-4 py-2.5 text-sm text-zinc-900 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 dark:border-zinc-800 dark:text-white"
+                className="rounded-xl border border-zinc-200 bg-zinc-50/50 dark:bg-zinc-900/20 px-4 py-2.5 text-sm text-zinc-900 placeholder-zinc-400 dark:placeholder-zinc-500 outline-none focus:bg-white dark:focus:bg-zinc-900/50 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/10 dark:border-zinc-800 dark:text-white dark:focus:border-indigo-400 dark:focus:ring-indigo-400/10 transition-all duration-200 shadow-sm"
               />
             </div>
             <div className="flex flex-col gap-1.5 sm:col-span-2">
-              <label className="text-xs font-semibold text-zinc-500 uppercase">Description / Key Accomplishments</label>
+              <label className="text-xs font-bold text-zinc-500 dark:text-zinc-400 uppercase">Description / Key Accomplishments</label>
               <textarea
                 rows={3}
                 placeholder="Developed high-throughput React features. Optimized bundle sizes by 30%..."
                 value={exp.description}
                 onChange={(e) => onItemChange(exp.id, 'description', e.target.value)}
-                className="rounded-xl border border-zinc-200 bg-transparent px-4 py-3 text-sm text-zinc-900 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 dark:border-zinc-800 dark:text-white resize-y"
+                className="rounded-xl border border-zinc-200 bg-zinc-50/50 dark:bg-zinc-900/20 px-4 py-3 text-sm text-zinc-900 placeholder-zinc-400 dark:placeholder-zinc-500 outline-none focus:bg-white dark:focus:bg-zinc-900/50 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/10 dark:border-zinc-800 dark:text-white dark:focus:border-indigo-400 dark:focus:ring-indigo-400/10 transition-all duration-200 shadow-sm resize-y"
               />
             </div>
           </div>

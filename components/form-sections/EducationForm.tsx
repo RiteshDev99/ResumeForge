@@ -36,43 +36,43 @@ export default function EducationForm({
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="flex flex-col gap-1.5">
-              <label className="text-xs font-semibold text-zinc-500 uppercase">Degree / Program</label>
+              <label className="text-xs font-bold text-zinc-500 dark:text-zinc-400 uppercase">Degree / Program</label>
               <input
                 type="text"
                 placeholder="Bachelor of Science in Computer Science"
                 value={edu.degree}
                 onChange={(e) => onItemChange(edu.id, 'degree', e.target.value)}
-                className="rounded-xl border border-zinc-200 bg-transparent px-4 py-2.5 text-sm text-zinc-900 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 dark:border-zinc-800 dark:text-white"
+                className="rounded-xl border border-zinc-200 bg-zinc-50/50 dark:bg-zinc-900/20 px-4 py-2.5 text-sm text-zinc-900 placeholder-zinc-400 dark:placeholder-zinc-500 outline-none focus:bg-white dark:focus:bg-zinc-900/50 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/10 dark:border-zinc-800 dark:text-white dark:focus:border-indigo-400 dark:focus:ring-indigo-400/10 transition-all duration-200 shadow-sm"
               />
             </div>
             <div className="flex flex-col gap-1.5">
-              <label className="text-xs font-semibold text-zinc-500 uppercase">College / University</label>
+              <label className="text-xs font-bold text-zinc-500 dark:text-zinc-400 uppercase">College / University</label>
               <input
                 type="text"
                 placeholder="Stanford University"
                 value={edu.college}
                 onChange={(e) => onItemChange(edu.id, 'college', e.target.value)}
-                className="rounded-xl border border-zinc-200 bg-transparent px-4 py-2.5 text-sm text-zinc-900 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 dark:border-zinc-800 dark:text-white"
+                className="rounded-xl border border-zinc-200 bg-zinc-50/50 dark:bg-zinc-900/20 px-4 py-2.5 text-sm text-zinc-900 placeholder-zinc-400 dark:placeholder-zinc-500 outline-none focus:bg-white dark:focus:bg-zinc-900/50 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/10 dark:border-zinc-800 dark:text-white dark:focus:border-indigo-400 dark:focus:ring-indigo-400/10 transition-all duration-200 shadow-sm"
               />
             </div>
             <div className="flex flex-col gap-1.5">
-              <label className="text-xs font-semibold text-zinc-500 uppercase">Year (e.g. 2018 - 2022)</label>
+              <label className="text-xs font-bold text-zinc-500 dark:text-zinc-400 uppercase">Year (e.g. 2018 - 2022)</label>
               <input
                 type="text"
                 placeholder="2016 - 2020"
                 value={edu.year}
                 onChange={(e) => onItemChange(edu.id, 'year', e.target.value)}
-                className="rounded-xl border border-zinc-200 bg-transparent px-4 py-2.5 text-sm text-zinc-900 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 dark:border-zinc-800 dark:text-white"
+                className="rounded-xl border border-zinc-200 bg-zinc-50/50 dark:bg-zinc-900/20 px-4 py-2.5 text-sm text-zinc-900 placeholder-zinc-400 dark:placeholder-zinc-500 outline-none focus:bg-white dark:focus:bg-zinc-900/50 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/10 dark:border-zinc-800 dark:text-white dark:focus:border-indigo-400 dark:focus:ring-indigo-400/10 transition-all duration-200 shadow-sm"
               />
             </div>
             <div className="flex flex-col gap-1.5">
-              <label className="text-xs font-semibold text-zinc-500 uppercase">CGPA / Grade (Optional)</label>
+              <label className="text-xs font-bold text-zinc-500 dark:text-zinc-400 uppercase">CGPA / Grade (Optional)</label>
               <input
                 type="text"
                 placeholder="3.8 / 4.0"
                 value={edu.cgpa || ''}
                 onChange={(e) => onItemChange(edu.id, 'cgpa', e.target.value)}
-                className="rounded-xl border border-zinc-200 bg-transparent px-4 py-2.5 text-sm text-zinc-900 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 dark:border-zinc-800 dark:text-white"
+                className="rounded-xl border border-zinc-200 bg-zinc-50/50 dark:bg-zinc-900/20 px-4 py-2.5 text-sm text-zinc-900 placeholder-zinc-400 dark:placeholder-zinc-500 outline-none focus:bg-white dark:focus:bg-zinc-900/50 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/10 dark:border-zinc-800 dark:text-white dark:focus:border-indigo-400 dark:focus:ring-indigo-400/10 transition-all duration-200 shadow-sm"
               />
             </div>
           </div>
