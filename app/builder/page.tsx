@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '../../components/Navbar';
 import TemplateCard from '../../components/TemplateCard';
 import ResumeForm from '../../components/ResumeForm';
@@ -43,6 +43,20 @@ export default function BuilderPage() {
 
   const [activeTab, setActiveTab] = useState<'resume' | 'cover-letter'>('resume');
   const [mobileTab, setMobileTab] = useState<'form' | 'preview'>('form');
+
+  // Sync templates gallery URL selection state
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const t = params.get('template');
+      if (t === 'modern' || t === 'minimal' || t === 'creative') {
+        const timer = setTimeout(() => {
+          setData(prev => ({ ...prev, selectedTemplate: t }));
+        }, 0);
+        return () => clearTimeout(timer);
+      }
+    }
+  }, []);
 
   // Calculate ATS metrics using the pure utility function
   const { score, completion, insights } = calculateMetrics(data);
@@ -147,7 +161,7 @@ export default function BuilderPage() {
                 className={`border-b-2 px-4 py-2.5 text-sm font-semibold transition-all cursor-pointer ${
                   activeTab === 'resume'
                     ? 'border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400'
-                    : 'border-transparent text-zinc-500 hover:text-zinc-850 dark:hover:text-zinc-300'
+                    : 'border-transparent text-zinc-500 dark:text-zinc-400 hover:text-zinc-850 dark:hover:text-zinc-200'
                 }`}
               >
                 Resume Details
@@ -158,7 +172,7 @@ export default function BuilderPage() {
                 className={`border-b-2 px-4 py-2.5 text-sm font-semibold transition-all cursor-pointer ${
                   activeTab === 'cover-letter'
                     ? 'border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400'
-                    : 'border-transparent text-zinc-500 hover:text-zinc-850 dark:hover:text-zinc-300'
+                    : 'border-transparent text-zinc-500 dark:text-zinc-400 hover:text-zinc-850 dark:hover:text-zinc-200'
                 }`}
               >
                 Cover Letter Options
@@ -217,8 +231,8 @@ export default function BuilderPage() {
               <User className="h-3.5 w-3.5 text-indigo-500" />
               <span>Ritesh Chaudhary</span>
             </div>
-            <div className="flex items-center justify-center md:justify-start gap-1.5 text-[11px] text-zinc-400">
-              <Mail className="h-3 w-3 text-zinc-400" />
+            <div className="flex items-center justify-center md:justify-start gap-1.5 text-[11px] text-zinc-600 dark:text-zinc-300">
+              <Mail className="h-3 w-3 text-zinc-500 dark:text-zinc-400" />
               <span>riteshchaudhary63430@gmail.com</span>
             </div>
           </div>
