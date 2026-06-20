@@ -73,7 +73,7 @@ export default function HeroMockup() {
                 </div>
               </div>
 
-              <div className="mt-2 flex items-center justify-between bg-white dark:bg-zinc-900 border border-zinc-150 dark:border-zinc-800 p-2 rounded-lg">
+              <div className="mt-2 flex flex-col min-[380px]:flex-row min-[380px]:items-center justify-between gap-2 bg-white dark:bg-zinc-900 border border-zinc-150 dark:border-zinc-800 p-2 rounded-lg">
                 <label className="flex items-center gap-2 cursor-pointer select-none">
                   <input
                     type="checkbox"
@@ -83,7 +83,7 @@ export default function HeroMockup() {
                   />
                   <span className="text-[9.5px] font-bold text-zinc-700 dark:text-zinc-300">Include GitHub & Portfolio</span>
                 </label>
-                <span className="text-[8px] text-zinc-400 italic">Adds +10 ATS points</span>
+                <span className="text-[8px] text-zinc-400 italic shrink-0">Adds +10 ATS points</span>
               </div>
             </div>
           )}

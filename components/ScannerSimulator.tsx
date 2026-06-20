@@ -52,30 +52,30 @@ export default function ScannerSimulator() {
             Already have a resume? Run a mock scan using our dynamic parser simulator to extract structural sections, score keyword match metrics, and identify critical optimization leaks.
           </p>
 
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-col sm:flex-row gap-3 w-full">
             <button
               type="button"
               onClick={() => handleSimulateScan('swe')}
-              className={`inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-xs font-semibold border transition-all cursor-pointer ${
+              className={`w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-xs font-semibold border transition-all cursor-pointer ${
                 simFile === 'swe'
                   ? 'bg-indigo-600 border-indigo-500 text-white'
                   : 'bg-zinc-900 border-zinc-800 text-zinc-350 hover:bg-zinc-850 hover:text-white'
               }`}
             >
-              <FileText className="h-3.5 w-3.5" />
-              <span>Demo: Software_Engineer.pdf</span>
+              <FileText className="h-3.5 w-3.5 shrink-0" />
+              <span className="truncate">Demo: Software_Engineer.pdf</span>
             </button>
             <button
               type="button"
               onClick={() => handleSimulateScan('marketing')}
-              className={`inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-xs font-semibold border transition-all cursor-pointer ${
+              className={`w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-xs font-semibold border transition-all cursor-pointer ${
                 simFile === 'marketing'
                   ? 'bg-indigo-600 border-indigo-500 text-white'
                   : 'bg-zinc-900 border-zinc-800 text-zinc-350 hover:bg-zinc-850 hover:text-white'
               }`}
             >
-              <FileText className="h-3.5 w-3.5" />
-              <span>Demo: Marketing_Manager.docx</span>
+              <FileText className="h-3.5 w-3.5 shrink-0" />
+              <span className="truncate">Demo: Marketing_Manager.docx</span>
             </button>
           </div>
           
