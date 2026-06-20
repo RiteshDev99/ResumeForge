@@ -64,7 +64,7 @@ export default function CreativeTemplate({ data, skillList }: CreativeTemplatePr
                         <h4 className="text-xs font-bold text-zinc-900">{exp.role}</h4>
                         <span className="text-[10px] font-bold text-zinc-500">{exp.company}</span>
                       </div>
-                      <span className="text-[9.5px] font-semibold text-zinc-400">{exp.duration}</span>
+                      <span className="text-[9.5px] font-semibold text-zinc-500">{exp.duration}</span>
                     </div>
                     {exp.description && (
                       <p className="text-[9.5px] leading-normal text-zinc-600 whitespace-pre-line">
@@ -134,7 +134,7 @@ export default function CreativeTemplate({ data, skillList }: CreativeTemplatePr
                   <div key={edu.id} className="flex flex-col gap-0.5">
                     <span className="text-[10px] font-bold text-zinc-900">{edu.degree}</span>
                     <span className="text-[9.5px] text-zinc-500 leading-tight">{edu.college}</span>
-                    <div className="flex items-center justify-between text-[8.5px] text-zinc-400">
+                    <div className="flex items-center justify-between text-[8.5px] text-zinc-500">
                       <span>{edu.year}</span>
                       {edu.cgpa && <span>GPA: {edu.cgpa}</span>}
                     </div>
@@ -153,7 +153,7 @@ export default function CreativeTemplate({ data, skillList }: CreativeTemplatePr
                   <div key={cert.id} className="flex flex-col">
                     <span className="text-[10px] font-bold text-zinc-900 leading-tight">{cert.name}</span>
                     <span className="text-[9px] text-zinc-500 leading-tight mt-0.5">{cert.organization}</span>
-                    <span className="text-[8px] text-zinc-400 mt-0.5">{cert.year}</span>
+                    <span className="text-[8px] text-zinc-500 mt-0.5">{cert.year}</span>
                   </div>
                 ))}
               </div>

@@ -28,7 +28,7 @@ export default function CoverLetterForm({ data, onChange }: CoverLetterFormProps
           <FileText className="h-5 w-5 text-indigo-500" />
           <span>Cover Letter Generator</span>
         </h3>
-        <p className="text-xs text-zinc-400">
+        <p className="text-xs text-zinc-500 dark:text-zinc-400">
           Enter target job details below. Predefined templates will automatically format a customized cover letter.
         </p>
       </div>
@@ -37,57 +37,57 @@ export default function CoverLetterForm({ data, onChange }: CoverLetterFormProps
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {/* Job Role */}
         <div className="flex flex-col gap-1.5">
-          <label className="text-xs font-semibold text-zinc-500 uppercase flex items-center gap-1.5">
-            <Briefcase className="h-3.5 w-3.5 text-zinc-400" /> Target Job Role
+          <label className="text-xs font-bold text-zinc-500 dark:text-zinc-400 uppercase flex items-center gap-1.5">
+            <Briefcase className="h-3.5 w-3.5 text-zinc-400 dark:text-zinc-550" /> Target Job Role
           </label>
           <input
             type="text"
             placeholder="Senior Frontend Engineer"
             value={data.coverLetter.jobRole}
             onChange={(e) => handleCoverLetterChange('jobRole', e.target.value)}
-            className="rounded-xl border border-zinc-200 bg-transparent px-4 py-2.5 text-sm text-zinc-900 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 dark:border-zinc-800 dark:text-white"
+            className="rounded-xl border border-zinc-200 bg-zinc-50/50 dark:bg-zinc-900/20 px-4 py-2.5 text-sm text-zinc-900 placeholder-zinc-400 dark:placeholder-zinc-500 outline-none focus:bg-white dark:focus:bg-zinc-900/50 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/10 dark:border-zinc-800 dark:text-white dark:focus:border-indigo-400 dark:focus:ring-indigo-400/10 transition-all duration-200 shadow-sm"
           />
         </div>
 
         {/* Company Name */}
         <div className="flex flex-col gap-1.5">
-          <label className="text-xs font-semibold text-zinc-500 uppercase flex items-center gap-1.5">
-            <Building className="h-3.5 w-3.5 text-zinc-400" /> Company Name
+          <label className="text-xs font-bold text-zinc-500 dark:text-zinc-400 uppercase flex items-center gap-1.5">
+            <Building className="h-3.5 w-3.5 text-zinc-400 dark:text-zinc-550" /> Company Name
           </label>
           <input
             type="text"
             placeholder="Digital Heroes Co"
             value={data.coverLetter.companyName}
             onChange={(e) => handleCoverLetterChange('companyName', e.target.value)}
-            className="rounded-xl border border-zinc-200 bg-transparent px-4 py-2.5 text-sm text-zinc-900 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 dark:border-zinc-800 dark:text-white"
+            className="rounded-xl border border-zinc-200 bg-zinc-50/50 dark:bg-zinc-900/20 px-4 py-2.5 text-sm text-zinc-900 placeholder-zinc-400 dark:placeholder-zinc-500 outline-none focus:bg-white dark:focus:bg-zinc-900/50 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/10 dark:border-zinc-800 dark:text-white dark:focus:border-indigo-400 dark:focus:ring-indigo-400/10 transition-all duration-200 shadow-sm"
           />
         </div>
 
         {/* Years of Experience */}
         <div className="flex flex-col gap-1.5 sm:col-span-2">
-          <label className="text-xs font-semibold text-zinc-500 uppercase flex items-center gap-1.5">
-            <Clock className="h-3.5 w-3.5 text-zinc-400" /> Years of Relevant Experience
+          <label className="text-xs font-bold text-zinc-500 dark:text-zinc-400 uppercase flex items-center gap-1.5">
+            <Clock className="h-3.5 w-3.5 text-zinc-400 dark:text-zinc-550" /> Years of Relevant Experience
           </label>
           <input
             type="text"
             placeholder="6"
             value={data.coverLetter.yearsOfExperience}
             onChange={(e) => handleCoverLetterChange('yearsOfExperience', e.target.value)}
-            className="rounded-xl border border-zinc-200 bg-transparent px-4 py-2.5 text-sm text-zinc-900 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 dark:border-zinc-800 dark:text-white"
+            className="rounded-xl border border-zinc-200 bg-zinc-50/50 dark:bg-zinc-900/20 px-4 py-2.5 text-sm text-zinc-900 placeholder-zinc-400 dark:placeholder-zinc-500 outline-none focus:bg-white dark:focus:bg-zinc-900/50 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/10 dark:border-zinc-800 dark:text-white dark:focus:border-indigo-400 dark:focus:ring-indigo-400/10 transition-all duration-200 shadow-sm"
           />
         </div>
 
         {/* Motivation/Reason */}
         <div className="flex flex-col gap-1.5 sm:col-span-2">
-          <label className="text-xs font-semibold text-zinc-500 uppercase flex items-center gap-1.5">
-            <FileQuestion className="h-3.5 w-3.5 text-zinc-400" /> Why do you want this job?
+          <label className="text-xs font-bold text-zinc-500 dark:text-zinc-400 uppercase flex items-center gap-1.5">
+            <FileQuestion className="h-3.5 w-3.5 text-zinc-400 dark:text-zinc-550" /> Why do you want this job?
           </label>
           <textarea
             rows={4}
             placeholder="Explain why you are motivated to join... e.g. I admire your team's focus on developer experience and open-source packages."
             value={data.coverLetter.reason}
             onChange={(e) => handleCoverLetterChange('reason', e.target.value)}
-            className="rounded-xl border border-zinc-200 bg-transparent px-4 py-3 text-sm text-zinc-900 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 dark:border-zinc-800 dark:text-white resize-y"
+            className="rounded-xl border border-zinc-200 bg-zinc-50/50 dark:bg-zinc-900/20 px-4 py-3 text-sm text-zinc-900 placeholder-zinc-400 dark:placeholder-zinc-500 outline-none focus:bg-white dark:focus:bg-zinc-900/50 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/10 dark:border-zinc-800 dark:text-white dark:focus:border-indigo-400 dark:focus:ring-indigo-400/10 transition-all duration-200 shadow-sm resize-y"
           />
         </div>
       </div>
