@@ -53,7 +53,7 @@ export default function MinimalTemplate({ data, skillList }: MinimalTemplateProp
               <div key={exp.id} className="flex flex-col gap-0.5">
                 <div className="flex items-center justify-between text-[10px] font-bold">
                   <span>{exp.role} — {exp.company}</span>
-                  <span className="font-normal text-zinc-500">{exp.duration}</span>
+                  <span className="font-normal text-zinc-600">{exp.duration}</span>
                 </div>
                 {exp.description && (
                   <p className="text-[9.5px] leading-normal text-zinc-700 whitespace-pre-line">
@@ -114,7 +114,7 @@ export default function MinimalTemplate({ data, skillList }: MinimalTemplateProp
                 <div key={edu.id} className="text-[9.5px]">
                   <div className="font-bold">{edu.degree}</div>
                   <div className="text-zinc-600">{edu.college} ({edu.year})</div>
-                  {edu.cgpa && <div className="text-[9px] text-zinc-500">GPA: {edu.cgpa}</div>}
+                  {edu.cgpa && <div className="text-[9px] text-zinc-600">GPA: {edu.cgpa}</div>}
                 </div>
               ))}
             </div>

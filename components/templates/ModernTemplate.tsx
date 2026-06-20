@@ -163,7 +163,7 @@ export default function ModernTemplate({ data, skillList }: ModernTemplateProps)
                       <h4 className="text-xs font-bold text-zinc-900">{exp.role}</h4>
                       <span className="text-[10px] font-medium text-zinc-500">{exp.company}</span>
                     </div>
-                    <span className="text-[10px] font-medium text-zinc-400">{exp.duration}</span>
+                    <span className="text-[10px] font-medium text-zinc-500">{exp.duration}</span>
                   </div>
                   {exp.description && (
                     <p className="text-[10px] leading-normal text-zinc-600 whitespace-pre-line">
@@ -189,7 +189,7 @@ export default function ModernTemplate({ data, skillList }: ModernTemplateProps)
                     <h4 className="text-xs font-bold text-zinc-900 flex items-center gap-1">
                       {proj.name}
                       {proj.githubLink && (
-                        <span className="text-[9px] font-normal text-zinc-400 flex items-center">
+                        <span className="text-[9px] font-normal text-zinc-500 flex items-center">
                           ({proj.githubLink})
                         </span>
                       )}
