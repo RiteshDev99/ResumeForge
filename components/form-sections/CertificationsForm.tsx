@@ -36,33 +36,33 @@ export default function CertificationsForm({
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="flex flex-col gap-1.5 sm:col-span-2">
-              <label className="text-xs font-semibold text-zinc-500 uppercase">Certificate Name</label>
+              <label className="text-xs font-bold text-zinc-500 dark:text-zinc-400 uppercase">Certificate Name</label>
               <input
                 type="text"
                 placeholder="AWS Certified Solutions Architect"
                 value={cert.name}
                 onChange={(e) => onItemChange(cert.id, 'name', e.target.value)}
-                className="rounded-xl border border-zinc-200 bg-transparent px-4 py-2.5 text-sm text-zinc-900 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 dark:border-zinc-800 dark:text-white"
+                className="rounded-xl border border-zinc-200 bg-zinc-50/50 dark:bg-zinc-900/20 px-4 py-2.5 text-sm text-zinc-900 placeholder-zinc-400 dark:placeholder-zinc-500 outline-none focus:bg-white dark:focus:bg-zinc-900/50 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/10 dark:border-zinc-800 dark:text-white dark:focus:border-indigo-400 dark:focus:ring-indigo-400/10 transition-all duration-200 shadow-sm"
               />
             </div>
             <div className="flex flex-col gap-1.5">
-              <label className="text-xs font-semibold text-zinc-500 uppercase">Issuing Organization</label>
+              <label className="text-xs font-bold text-zinc-500 dark:text-zinc-400 uppercase">Issuing Organization</label>
               <input
                 type="text"
                 placeholder="Amazon Web Services (AWS)"
                 value={cert.organization}
                 onChange={(e) => onItemChange(cert.id, 'organization', e.target.value)}
-                className="rounded-xl border border-zinc-200 bg-transparent px-4 py-2.5 text-sm text-zinc-900 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 dark:border-zinc-800 dark:text-white"
+                className="rounded-xl border border-zinc-200 bg-zinc-50/50 dark:bg-zinc-900/20 px-4 py-2.5 text-sm text-zinc-900 placeholder-zinc-400 dark:placeholder-zinc-500 outline-none focus:bg-white dark:focus:bg-zinc-900/50 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/10 dark:border-zinc-800 dark:text-white dark:focus:border-indigo-400 dark:focus:ring-indigo-400/10 transition-all duration-200 shadow-sm"
               />
             </div>
             <div className="flex flex-col gap-1.5">
-              <label className="text-xs font-semibold text-zinc-500 uppercase">Year Obtained</label>
+              <label className="text-xs font-bold text-zinc-500 dark:text-zinc-400 uppercase">Year Obtained</label>
               <input
                 type="text"
                 placeholder="2023"
                 value={cert.year}
                 onChange={(e) => onItemChange(cert.id, 'year', e.target.value)}
-                className="rounded-xl border border-zinc-200 bg-transparent px-4 py-2.5 text-sm text-zinc-900 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 dark:border-zinc-800 dark:text-white"
+                className="rounded-xl border border-zinc-200 bg-zinc-50/50 dark:bg-zinc-900/20 px-4 py-2.5 text-sm text-zinc-900 placeholder-zinc-400 dark:placeholder-zinc-500 outline-none focus:bg-white dark:focus:bg-zinc-900/50 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/10 dark:border-zinc-800 dark:text-white dark:focus:border-indigo-400 dark:focus:ring-indigo-400/10 transition-all duration-200 shadow-sm"
               />
             </div>
           </div>

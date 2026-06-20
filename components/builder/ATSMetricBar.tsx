@@ -50,7 +50,7 @@ export default function ATSMetricBar({ score, completion, insights }: ATSMetricB
         </div>
         <div>
           <h4 className="text-sm font-bold text-zinc-900 dark:text-white">Profile Completion</h4>
-          <p className="text-xs text-zinc-400">Filled sections index indicator</p>
+          <p className="text-xs text-zinc-500 dark:text-zinc-400">Filled sections index indicator</p>
         </div>
       </div>
 
@@ -58,7 +58,7 @@ export default function ATSMetricBar({ score, completion, insights }: ATSMetricB
       <div className="flex items-center justify-between border-t border-zinc-100 pt-4 md:border-t-0 md:pt-0 md:border-l md:pl-6 border-zinc-200 dark:border-zinc-800">
         <div className="flex flex-col gap-1">
           <div className="flex items-center gap-1.5">
-            <span className="text-xs font-bold text-zinc-400 uppercase">ATS Score</span>
+            <span className="text-xs font-bold text-zinc-500 dark:text-zinc-400 uppercase">ATS Score</span>
             <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${strength.color}`}>
               {strength.label}
             </span>
@@ -66,7 +66,7 @@ export default function ATSMetricBar({ score, completion, insights }: ATSMetricB
           <span className="text-2xl font-black text-zinc-950 dark:text-white tracking-tight">{score}%</span>
         </div>
         <div className="flex flex-col items-end gap-1.5">
-          <span className="text-xs text-zinc-400">Score Rating</span>
+          <span className="text-xs text-zinc-500 dark:text-zinc-400">Score Rating</span>
           <div className="h-2 w-28 bg-zinc-100 dark:bg-zinc-800 rounded-full overflow-hidden">
             <div 
               className={`h-full transition-all duration-500 ${
@@ -80,11 +80,11 @@ export default function ATSMetricBar({ score, completion, insights }: ATSMetricB
 
       {/* Col 3: Actionable Strength Insights list */}
       <div className="border-t border-zinc-100 pt-4 md:border-t-0 md:pt-0 md:border-l md:pl-6 border-zinc-200 dark:border-zinc-800 flex flex-col justify-center">
-        <h4 className="text-xs font-bold text-zinc-500 uppercase tracking-wide mb-1.5 flex items-center gap-1">
+        <h4 className="text-xs font-bold text-zinc-500 dark:text-zinc-450 uppercase tracking-wide mb-1.5 flex items-center gap-1">
           <AlertCircle className="h-3.5 w-3.5 text-indigo-500" /> Action Items
         </h4>
         {insights.length > 0 ? (
-          <div className="text-[10px] text-zinc-500 leading-snug flex flex-col gap-1 max-h-[50px] overflow-y-auto">
+          <div className="text-[10px] text-zinc-600 dark:text-zinc-300 leading-snug flex flex-col gap-1 max-h-[50px] overflow-y-auto">
             {insights.slice(0, 2).map((insight, idx) => (
               <div key={idx} className="flex items-start gap-1">
                 <span className="text-rose-500 shrink-0">•</span>
@@ -92,7 +92,7 @@ export default function ATSMetricBar({ score, completion, insights }: ATSMetricB
               </div>
             ))}
             {insights.length > 2 && (
-              <span className="text-zinc-400 italic">+{insights.length - 2} more recommendations</span>
+              <span className="text-zinc-500 dark:text-zinc-400 italic">+{insights.length - 2} more recommendations</span>
             )}
           </div>
         ) : (

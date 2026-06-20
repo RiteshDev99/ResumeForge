@@ -32,7 +32,7 @@ export default function CoverLetterDocument({ data, coverLetterText }: CoverLett
           {data.personalInfo.title || 'Target Job Title'}
         </p>
 
-        <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-[10px] text-zinc-500">
+        <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-[10px] text-zinc-600">
           {data.personalInfo.email && <span>Email: {data.personalInfo.email}</span>}
           {data.personalInfo.phone && <span>Phone: {data.personalInfo.phone}</span>}
           {data.personalInfo.location && <span>Location: {data.personalInfo.location}</span>}
