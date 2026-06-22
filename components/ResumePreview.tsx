@@ -2,20 +2,15 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { ResumeData } from '../types/resume';
-import { COVER_LETTER_TEMPLATES } from '../data/templates';
 import ModernTemplate from './templates/ModernTemplate';
 import MinimalTemplate from './templates/MinimalTemplate';
 import CreativeTemplate from './templates/CreativeTemplate';
-import CoverLetterDocument from './templates/CoverLetterDocument';
 
 interface ResumePreviewProps {
   data: ResumeData;
-  activeTab: 'resume' | 'cover-letter';
-  setActiveTab: (tab: 'resume' | 'cover-letter') => void;
 }
 
-export default function ResumePreview({ data, activeTab, setActiveTab }: ResumePreviewProps) {
-  const [activeLetterTone, setActiveLetterTone] = useState<string>('modern');
+export default function ResumePreview({ data }: ResumePreviewProps) {
   const [zoom, setZoom] = useState(1);
   const [scrollHeight, setScrollHeight] = useState(1122);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -25,19 +20,6 @@ export default function ResumePreview({ data, activeTab, setActiveTab }: ResumeP
   const skillList = data.skills
     ? data.skills.split(',').map((s) => s.trim()).filter(Boolean)
     : [];
-
-  // Generate Cover Letter Content text
-  const selectedTone = COVER_LETTER_TEMPLATES.find(t => t.id === activeLetterTone) || COVER_LETTER_TEMPLATES[0];
-  const coverLetterText = selectedTone.generate({
-    fullName: data.personalInfo.fullName,
-    email: data.personalInfo.email,
-    phone: data.personalInfo.phone,
-    location: data.personalInfo.location,
-    jobRole: data.coverLetter.jobRole,
-    companyName: data.coverLetter.companyName,
-    reason: data.coverLetter.reason,
-    yearsOfExperience: data.coverLetter.yearsOfExperience
-  });
 
   useEffect(() => {
     const updateDimensions = () => {
@@ -60,13 +42,9 @@ export default function ResumePreview({ data, activeTab, setActiveTab }: ResumeP
       observer.disconnect();
       window.removeEventListener('resize', updateDimensions);
     };
-  }, [data, activeTab]);
+  }, [data]);
 
   const getActiveDocument = () => {
-    if (activeTab === 'cover-letter') {
-      return <CoverLetterDocument data={data} coverLetterText={coverLetterText} />;
-    }
-    
     switch (data.selectedTemplate) {
       case 'minimal':
         return <MinimalTemplate data={data} skillList={skillList} />;
@@ -80,50 +58,13 @@ export default function ResumePreview({ data, activeTab, setActiveTab }: ResumeP
 
   return (
     <div className="flex flex-col h-full">
-      {/* Toggles bar */}
-      <div className="flex items-center justify-between border-b border-zinc-100 bg-zinc-50 px-4 py-2 dark:border-zinc-800 dark:bg-zinc-900/50 rounded-t-2xl">
-        <div className="flex gap-1">
-          <button
-            type="button"
-            onClick={() => setActiveTab('resume')}
-            className={`rounded-lg px-3 py-1.5 text-xs font-semibold transition-all cursor-pointer ${
-              activeTab === 'resume'
-                ? 'bg-white text-zinc-950 shadow-sm dark:bg-zinc-900 dark:text-white'
-                : 'text-zinc-500 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-zinc-200'
-            }`}
-          >
-            Resume Document
-          </button>
-          <button
-            type="button"
-            onClick={() => setActiveTab('cover-letter')}
-            className={`rounded-lg px-3 py-1.5 text-xs font-semibold transition-all cursor-pointer ${
-              activeTab === 'cover-letter'
-                ? 'bg-white text-zinc-950 shadow-sm dark:bg-zinc-900 dark:text-white'
-                : 'text-zinc-500 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-zinc-200'
-            }`}
-          >
-            Cover Letter
-          </button>
+      {/* Premium Live Sync Header */}
+      <div className="flex items-center justify-between border-b border-zinc-100 bg-zinc-50 px-4 py-3 dark:border-zinc-800 dark:bg-zinc-900/50 rounded-t-2xl">
+        <span className="text-xs font-bold text-zinc-700 dark:text-zinc-300 uppercase tracking-wider">Document Live Preview</span>
+        <div className="flex items-center gap-1.5">
+          <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span className="text-[10px] text-zinc-500 dark:text-zinc-400 font-semibold">Auto-Synced</span>
         </div>
-
-        {/* Tone picker for Cover Letter */}
-        {activeTab === 'cover-letter' && (
-          <div className="flex items-center gap-1.5">
-            <span className="text-[10px] font-semibold text-zinc-400 uppercase">Tone:</span>
-            <select
-              value={activeLetterTone}
-              onChange={(e) => setActiveLetterTone(e.target.value)}
-              className="rounded border border-zinc-200 bg-white px-2 py-1 text-[10px] font-semibold text-zinc-600 outline-none dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-300"
-            >
-              {COVER_LETTER_TEMPLATES.map((tone) => (
-                <option key={tone.id} value={tone.id}>
-                  {tone.name}
-                </option>
-              ))}
-            </select>
-          </div>
-        )}
       </div>
 
       {/* Render Workspace - Simulated A4 paper sheet scaled inside dashboard */}
