@@ -58,3 +58,24 @@ export interface ResumeData {
   coverLetter: CoverLetterInput;
   selectedTemplate: 'modern' | 'minimal' | 'creative';
 }
+
+export interface GitHubRepo {
+  name: string;
+  description: string;
+  language: string;
+  stars: number;
+  size: number;
+  topics: string[];
+  updated_at: string;
+  html_url: string;
+}
+
+export interface GitHubProfile {
+  login: string;
+  name?: string;
+  avatar_url?: string;
+  html_url?: string;
+  email?: string;
+  location?: string;
+  blog?: string;
+}
